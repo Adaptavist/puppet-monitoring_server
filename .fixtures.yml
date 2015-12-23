@@ -1,0 +1,30 @@
+fixtures:
+  repositories:
+    stdlib:
+      repo: "https://github.com/Adaptavist/puppet-stdlib"
+    apache:
+      repo: "https://github.com/Adaptavist/puppet-apache"
+    concat: 
+      repo: "https://github.com/Adaptavist/puppet-concat.git"
+    elasticsearch:
+      repo: "https://github.com/Adaptavist/puppet-elasticsearch.git"
+    kibana3:
+      repo: "https://github.com/Adaptavist/puppet-kibana3.git"
+    logstash:
+      repo: "https://github.com/Adaptavist/puppet-logstash.git"
+    grafana:
+      repo: "https://github.com/Adaptavist/puppet-grafana_old_before_2015_05_18.git"
+    collectd:
+      repo: "ssh://git@stash.adaptavist.com:7999/pup/puppet-collectd.git"
+    graphite:
+      repo: "ssh://git@stash.adaptavist.com:7999/pup/puppet-graphite.git"
+    file_concat: 
+      repo: "git://github.com/electrical/puppet-lib-file_concat.git"
+    git:
+      repo: "https://github.com/Adaptavist/puppet-git.git"
+    vcsrepo:
+      repo: "https://github.com/Adaptavist/puppet-vcsrepo.git"
+    archive:
+      repo: "https://github.com/Adaptavist/puppet-archive.git"
+  symlinks:
+    monitoring_server: "#{source_dir}"
