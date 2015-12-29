@@ -15,9 +15,9 @@ fixtures:
     grafana:
       repo: "https://github.com/Adaptavist/puppet-grafana_old_before_2015_05_18.git"
     collectd:
-      repo: "ssh://git@stash.adaptavist.com:7999/pup/puppet-collectd.git"
+      repo: "https://github.com/Adaptavist/puppet-collectd.git"
     graphite:
-      repo: "ssh://git@stash.adaptavist.com:7999/pup/puppet-graphite.git"
+      repo: "https://github.com/Adaptavist/puppet-graphite.git"
     file_concat: 
       repo: "git://github.com/electrical/puppet-lib-file_concat.git"
     git:

@@ -1,12 +1,12 @@
 name 'adaptavist-monitoring_server'
-version '0.2.4'
-source 'git@stash.adaptavist.com:7999/pup/puppet-monitoring_server.git'
+version '0.2.5'
+source 'https://github.com/Adaptavist/puppet-monitoring_server.git'
 author 'adaptavist'
 summary 'Monitoring Server Module' 
 license 'Apache2'
 description 'The **monitoring_server** module handles the installation, running and configuration of 
 the monitoring applications Logstash, Elasticsearch, Kibana, Collectd, Graphite and Grafana.'
-project_page 'https://stash.adaptavist.com/projects/PUP/repos/puppet-monitoring_server/browse'
+project_page 'https://github.com/Adaptavist/puppet-monitoring_server/browse'
 
 ## Add dependencies, if any:
 dependency 'puppetlabs/stdlib', '>= 2.4.0'
