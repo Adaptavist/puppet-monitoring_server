@@ -1,4 +1,5 @@
 # Monitoring server Module
+[![Build Status](https://travis-ci.org/Adaptavist/puppet-monitoring_server.svg?branch=master)](https://travis-ci.org/Adaptavist/puppet-monitoring_server)
 
 ## Overview
 
