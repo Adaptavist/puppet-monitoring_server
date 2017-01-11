@@ -1,5 +1,5 @@
 name 'adaptavist-monitoring_server'
-version '0.2.6'
+version '0.2.7'
 source 'https://github.com/Adaptavist/puppet-monitoring_server.git'
 author 'adaptavist'
 summary 'Monitoring Server Module' 
