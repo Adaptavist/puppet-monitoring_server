@@ -1,7 +1,7 @@
 require 'spec_helper'
  
 os = 'CentOS'
-os_release = 6.6 
+os_release = '6.6' 
 os_family = "RedHat"
 install_dir="/opt"
 mod_crowd_package = "mod_authnz_crowd"
@@ -12,7 +12,7 @@ group = "aache"
 kibana_config_es_server = '"+window.location.hostname+"'
 kibana_config_es_port     = "80/es"
 daatsources = {"elasticsearch"=>{"type"=>"elasticsearch", "url"=>"http://grafana.monitoring.example.com/es", "index"=>"grafana-dash", "grafanaDB"=>"true"}}
-
+apache_version = '2.4'
 describe 'monitoring_server', :type => 'class' do
 
     context "Should install package, create vhosts and include classes" do
@@ -32,11 +32,13 @@ describe 'monitoring_server', :type => 'class' do
         :kibana_manage_ws => "#{kibana_manage_ws}",
         :kibana_k3_release => "#{kibana_k3_release}",
         :user => "#{user}",
-        :group => "#{group}"
+        :group => "#{group}",
+        :apache_version => apache_version
       } }
       let(:facts) { {
         :osfamily => "#{os_family}",
         :operatingsystemrelease => "#{os_release}",
+        :operatingsystemmajrelease => '7',
         :operatingsystem => "#{os}",
         :concat_basedir => '/tmp',
         :kernel => 'Linux',

@@ -37,10 +37,12 @@ class monitoring_server(
   $crowd_url = undef,
   $crowd_app = undef,
   $crowd_password = undef,
+  $apache_version = 2.4,
   ) inherits monitoring_server::params {
 
     class {'apache':
       default_vhost => false,
+      apache_version => $apache_version
     }
 
     if $crowd_url {
@@ -132,16 +134,16 @@ class monitoring_server(
 
       apache::vhost {
         'kibana3':
-          servername    => $kibana_servername,
-          docroot       => "${::kibana3::k3_install_folder}/src",
-          port          => 80,
-          docroot_owner => $user,
-          docroot_group => $group,
-          directories   => $directories,
-          require       => Vcsrepo['/opt/kibana3'],
-          proxy_pass    => [{
-                            path => '/es',
-                            url  => $es_host_port,
+          servername        => $kibana_servername,
+          docroot           => "${::kibana3::k3_install_folder}/src",
+          port              => 80,
+          docroot_owner     => $user,
+          docroot_group     => $group,
+          directories       => $directories,
+          require           => Vcsrepo['/opt/kibana3'],
+          proxy_pass        => [{
+                              path => '/es',
+                              url  => $es_host_port,
                             }],
           access_log_format => '%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" %% %T %D %{XMETRIX-COMBINED}o',
       }
@@ -178,8 +180,8 @@ class monitoring_server(
 
     if($include_graphite == true){
       class {'graphite':
-        owner   => $user,
-        group   => $group,
+        owner => $user,
+        group => $group,
       }
 
       include apache::mod::wsgi
@@ -246,7 +248,7 @@ class monitoring_server(
                             path => '/es',
                             url  => $es_host_port,
                             }],
-          headers                     => [
+          headers       => [
           "set Access-Control-Allow-Origin 'http://${graphite_servername}'",
           'set Access-Control-Allow-Methods "GET, OPTIONS, POST, PUT, DELETE"',
           'set Access-Control-Allow-Headers "origin, authorization, accept"',
